@@ -60,7 +60,7 @@ To create the main branch in our project you need mandatory use of the following
 Now we add the path in which our staging area will connect to our remote repository through this command
 <pre>FOR EXAMPLE: git remote add origin https://github.com/Noriega402/test-repository.git</pre>
 ```bash
-  git remote add origin [url]
+  git remote add origin url
 ```
 Finally we make all changes or new files are uploaded to our repository on GitHub:
 ```bash
@@ -78,12 +78,12 @@ It is used to be able to see in console the changes made, either we delete or ad
 ##### diff <route/file>
 We can use it to see the changes made in a single file
 ```bash
-  git diff <route/name-file>
+  git diff name-file
 ```
 ##### diff hash-old hash-new
 We can use it to see the changes made between one commit and another
 ```bash
-  git diff <hash-commit-old> <hash-commit-new>
+  git diff hash-commit-old hash-commit-new
 ```
 #### git rm
 You have several options which are as follows:
@@ -95,12 +95,12 @@ You have several options which are as follows:
 ##### --cached
 - To remove changes added to the stagin area.
 ```bash
-  git rm --cached <name-file>
+  git rm --cached name-file
 ```
 ##### -rf
 - To forcibly delete a folder
 ```bash
-  git rm -rf <name-folder>
+  git rm -rf name-folder
 ```
 
 #### git log
@@ -164,4 +164,69 @@ We have many changes or commit in our repository, as the project gets bigger, my
 ```
 ```bash
   git log --oneline -p
+```
+#### git branch
+##### branch
+- You can see all branches in your repository.
+```bash
+  git branch
+```
+- To view your repository branches
+```bash
+  git branch -a
+```
+##### -v
+- View branches with their last commit (hash and message).
+```bash
+  git branch -v
+```
+##### -a
+- View all local/remote branches.
+```bash
+  git branch -a
+```
+#### New branch
+##### [new name branch]
+- To create a new branch in the repository
+```bash
+  git branch development
+```
+#### checkout
+- To change branches
+```bash
+  git checkout name_branch
+```
+There is a shortcut to create and move branches in the repository.
+```bash
+  git checkout -b new-name-branch
+```
+#### Rename branches
+#### --move
+Form One
+```bash
+  git branch --move old-name-branch  new-name-branch
+```
+Form Two
+```bash
+  git branch -m old-name-branch  new-name-branch
+```
+#### Deleting branches
+##### -d
+```bash
+  git checkout main
+  git branch -d development
+  git branch
+```
+#### --amend
+Most of the time it happens to us for the commit message we write it wrong, then this command helps us to correct the commit again
+```hash
+  git commit --amend -m "Fixed commit message"
+```
+#### --no-edit
+In case we forget to add a file or folder to a commit, we can also add it this way with a new option and there is no need to edit the commit message or add a new one:
+```bash
+  git add name-file
+```
+```bash
+  git commit --amend --no-edit
 ```
