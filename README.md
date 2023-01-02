@@ -143,3 +143,25 @@ We have many changes or commit in our repository, as the project gets bigger, my
 ```bash
   git log -p
 ```
+#### --graph
+- Allows you to view the history of commits by means of a small graph
+```bash
+  git log --graph
+```
+#### joins log
+- Most of these commands can be merged into a single line, I invite you to practice them or discover them for yourself.
+```bash
+  git log --graph
+```
+```bash
+  git log --oneline --graph
+```
+```bash
+  git log --oneline --graph --decorate
+```
+```bash
+  git log --oneline --stat
+```
+```bash
+  git log --oneline -p
+```
