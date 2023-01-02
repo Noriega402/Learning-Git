@@ -17,7 +17,7 @@ To add to the stage all the files that have been edited, use the following comma
 ```
 Perform a commit (code capture) with a message about the changes that were made
 ```bash
-  git commit -m "Message description"
+  git commit -m "Message commit"
 ```
 If we want to skip the two previous commands ( _git add_, _git commit -m_ ) we can do the following, it is like watching a shorthand
 ```bash
@@ -29,6 +29,19 @@ It is possible to remove them in several ways, either by deleting the file from 
 ```
 Now we will have to create a git repository to be able to add our project
 <br>
+1.  Click on the "new repository" option
 <div align="center">
   <img src="https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-1.PNG">
+</div>
+2.  A name is required for the repository, so we insert one, GitHub is responsible for seeing if that name we have already used before, if not if it validates the repository name field
+
+__NOTE:__ The repository view option must be public, otherwise no one will be able to see our project
+<div align="center">
+  <img src="https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-2.png">
  </div>
+3.   Click create repository
+<div align="center">
+  <img src="https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-3.jpg">
+ </div>
+A space like this will appear:
+<img src="https://github.com/Noriega402/Learning-Git/blob/main/img/remote/1.jpg">
