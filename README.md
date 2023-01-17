@@ -230,3 +230,67 @@ In case we forget to add a file or folder to a commit, we can also add it this w
 ```bash
   git commit --amend --no-edit
 ```
+#### git stash
+saves the current Staging job in a list designed to be temporary called Stash, so that it can be retrieved in the future. To add the changes to the stash, use the command:
+```bash
+git stash
+```
+We can put a message in the stash, in order to differentiate them in the git stash list in case we have several elements in the stash. This with:
+```bash
+git stash save "Your messagge to stash"
+```
+
+#### List of items in the stash
+To see the list of changes saved in Stash and thus be able to retrieve them or do something with them we can use the command:
+
+```bash
+  git stash list
+  ```
+  
+#### Get elements from the _stash_.
+The stashed behaves like a data Stack behaving in a LIFO (Last In, First Out) way, so we can access the pop method.
+
+The pop method will retrieve the last stashed state from the list and insert it into the staging area, so it is important to know which branch you are in to be able to retrieve it, since the stash will be agnostic to the branch or state you are in. It will always retrieve the changes you made in the place you call it.
+
+- To retrieve the latest changes from the stash to your staging area use the command:
+  ```bash
+  git stash pop
+  ```
+- To apply changes to a specific stash and remove it from the stash:
+```bash
+  git stash pop stash@{<num_stash>}
+  ```
+ - To resume the changes of a specific Stash position you can use the command:
+ ```bash
+  git stash apply stash@{<num_stash>}
+  ```
+ __NOTE:__ the <num_stash> you get it from the git stash list
+ 
+ #### Creating a branch with the stash
+To create a branch and apply the most recent stash we can use the command:
+
+```bash
+git stash branch <branch_name>.
+```
+If you want to create a branch and apply a specific stash (obtained from git stash list) you can use the command:
+```bash
+git stash branch branch_name stash@{<num_stash>}
+```
+By using these commands you will create a branch with the name <branch_name>, move to it and have the specified stash in your staging area.
+#### Removing elements from the stash
+To remove the most recent changes within the stash (element 0), we can use the command:
+
+```bash
+git stash drop
+```
+But if, instead, you know the index of the stash you want to delete (via git stash list) you can use the command:
+```bash
+git stash drop stash@{<num_stash>}
+```
+Where the <num_stash> is the index of the saved change.
+
+If, on the other hand, you want to remove all elements from the stash, you can use:
+
+```bash
+git stash clear
+```
