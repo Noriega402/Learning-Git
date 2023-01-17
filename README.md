@@ -314,3 +314,19 @@ git clean -f
 ```bash
 git clean -df
 ```
+#### git reflog
+Git saves all changes even if you decide to delete them, by deleting a change what you are doing is just updating the branch tip, to manage these tips there is a mechanism called reference logs or reflogs...The management of these changes is through the reference (or ref) hash's which are pointers to the commits...The hash's record when the Git references were updated in the local repository (local only), so if you want to see how you have modified the history you can use the command:
+```bash
+git reflog
+```
+#### git reset
+- __soft:__ when the --soft argument is passed, the reference pointers are updated and the reset stops there. The staging environment index and working directory remain intact. It may be difficult to clearly demonstrate this behavior.
+__NOTE:__ with soft, deleted files are not recovered, they just remain deleted in staging.
+  ```bash
+  git reset --soft <hash-commit>
+  ```
+- __--hard:__ This is the most direct, DANGEROUS and usual option. When --hard is passed, the commit history reference pointers are updated to the specified commit. The staging environment index and working directory are then reset to reflect the specified commit. All previous pending changes to the staging environment index and working directory are reset to reflect the state of the commit tree. This means that any pending work left in the staging environment index and working directory will be lost.
+Note:__with hard if the files are recovered inside our computer, as if they had never been deleted.
+```bash
+git reset --hard <hash-commit>
+```
