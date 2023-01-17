@@ -289,8 +289,28 @@ git stash drop stash@{<num_stash>}
 ```
 Where the <num_stash> is the index of the saved change.
 
+#### git clean
+
 If, on the other hand, you want to remove all elements from the stash, you can use:
 
 ```bash
 git stash clear
+```
+Executing the default command may result in an error. Git's global configuration forces the force option to be used with the command for it to be effective. This is an important safety mechanism as this command cannot be undone.
+
+__NOTE:__ git clean only detects new files, not just repeated files.
+
+#### Simulate a file deletion
+```bash
+git clean --dry-run
+```
+
+#### Delete the files listed as not to be tracked.
+```bash
+git clean -f
+```
+
+#### Delete the folders listed as not to be tracked.
+```bash
+git clean -df
 ```
