@@ -1,7 +1,3 @@
-# Indice
-
-- [LearningGit](#learning)
-
 <h2 id="learning">Learning Git</h2>
 
 Initialize a repository locally
