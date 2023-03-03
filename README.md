@@ -1,5 +1,4 @@
-<body style="background-color:#1f2937; color:#fff">
-<div style="background-color:#1f2937">
+<div>
 
 # Indice
 
@@ -400,10 +399,9 @@ __NOTE:__  with soft, deleted files are not recovered, they just remain deleted 
 
 - __--hard:__ This is the most direct, DANGEROUS and usual option. When --hard is passed, the commit history reference pointers are updated to the specified commit. The staging environment index and working directory are then reset to reflect the specified commit. All previous pending changes to the staging environment index and working directory are reset to reflect the state of the commit tree. This means that any pending work left in the staging environment index and working directory will be lost.
 
-Note:__ with hard if the files are recovered inside our computer, as if they had never been deleted.
+__Note:__ with hard if the files are recovered inside our computer, as if they had never been deleted.
   ```bash
   git reset --hard <hash-commit>
   ```
 
 </div>
-</body>
