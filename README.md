@@ -225,7 +225,7 @@ We have many changes or commit in our repository, as the project gets bigger, my
 ```
 
 <h4 id="newBranch">New branch</h4>
-<h5 id="newNameBranch">new name branch<h5>
+<h5 id="newNameBranch">new name branch</h5>
 
 - To create a new branch in the repository
 ```bash
