@@ -334,7 +334,7 @@ git stash branch branch_name stash@{<num_stash>}
 ```
 By using these commands you will create a branch with the name <branch_name>, move to it and have the specified stash in your staging area.
 
-<h4 id="remove-elements-stash">Removing element from the stash<h4>
+<h4 id="remove-elements-stash">Removing element from the stash</h4>
 
 To remove the most recent changes within the stash (element 0), we can use the command:
 
