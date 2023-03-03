@@ -48,7 +48,7 @@ __NOTE:__ The repository view option must be public, otherwise no one will be ab
  
 A space like this will appear:
 
-![imagen remota](https://github.com/Noriega402/Learning-Git/blob/main/img/remote/1.jpg)
+<img src="https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-1.png" alt="agregar 1">
 
 - The first box is to connect by https or SSH to our repository, for the moment it will only be by https.
 - The second table gives us some of the commands already mentioned above and some new ones that we will mention later.
@@ -199,7 +199,7 @@ We have many changes or commit in our repository, as the project gets bigger, my
 ```
 
 <h4 id="gitBranch">git branch</h4>
-<h5 id="branch">branch<h5>
+<h5 id="branch">branch</h5>
 
 - You can see all branches in your repository.
 ```bash
