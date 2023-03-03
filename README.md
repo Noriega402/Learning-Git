@@ -30,12 +30,14 @@ It is possible to remove them in several ways, either by deleting the file from 
 ```
 Now we will have to create a git repository to be able to add our project
 <br>
+
 1.  Click on the "new repository" option
 <div align="center">
 
-  ![add 1](https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-1.PNG)
+  ![add 1](https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-1.png)
   
 </div>
+
 2.  A name is required for the repository, so we insert one, GitHub is responsible for seeing if that name we have already used before, if not if it validates the repository name field
 
 __NOTE:__ The repository view option must be public, otherwise no one will be able to see our project
@@ -43,13 +45,14 @@ __NOTE:__ The repository view option must be public, otherwise no one will be ab
 
   ![add 2](https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-2.png)
   
- </div>
+</div>
+
 3.   Click create repository
 <div align="center">
 
   ![add 3](https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-3.jpg)
   
- </div>
+</div>
  
 A space like this will appear:
 [imagen remota](https://github.com/Noriega402/Learning-Git/blob/main/img/remote/1.jpg)
@@ -66,8 +69,11 @@ To create the main branch in our project you need mandatory use of the following
 ```bash
   git branch -M main
 ```
+
 Now we add the path in which our staging area will connect to our remote repository through this command
+
 <pre>FOR EXAMPLE: git remote add origin https://github.com/Noriega402/test-repository.git</pre>
+
 ```bash
   git remote add origin url
 ```
@@ -100,6 +106,7 @@ We can use it to see the changes made between one commit and another
 <h4 id="gitRm">git rm</h4>
 
 You have several options which are as follows:
+
 <h5 id="-r">-r<h5>
 
 - Gives permission to delete recursively within a folder
@@ -168,6 +175,7 @@ We have many changes or commit in our repository, as the project gets bigger, my
 ```bash
   git log -p
 ```
+
 <h4 id="--graph">--graph<h4>
 
 - Allows you to view the history of commits by means of a small graph
