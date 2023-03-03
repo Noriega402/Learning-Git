@@ -1,5 +1,3 @@
-<div>
-
 # Indice
 
 - [LearningGit](#learning)
@@ -403,5 +401,3 @@ __Note:__ with hard if the files are recovered inside our computer, as if they h
   ```bash
   git reset --hard <hash-commit>
   ```
-
-</div>
