@@ -1,4 +1,5 @@
-<html style="background-color:#1f2937; color:#fff">
+<html>
+<body style="background-color:#1f2937; color:#fff">
 <div style="background-color:#1f2937">
 
 # Indice
@@ -406,4 +407,5 @@ Note:__ with hard if the files are recovered inside our computer, as if they had
   ```
 
 </div>
+</body>
 </html>
