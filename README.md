@@ -1,6 +1,74 @@
-<h2 id="learning">Learning Git</h2>
+# Table of contents
 
-Initialize a repository locally
+- [Setting up your git bash](#setting-up-your-git-bash)
+- [Initialize local repository](#initialize-a-repository-locally)
+- [Commands](#otrosComandos)
+  - [git push](#git-push)
+    - [git push standard](#push-standard)
+    - [git push --force](#push-force)
+    - [git push --all](#push-all)
+    - [git push --tags](#push-tags)
+  - [git commit](#git-commit)
+    - [-m](#commit-m)
+    - [-am](#commit-am)
+    - [--amend](#commit-amend)
+    - [--no-edit](#commit-no-edit)
+  - [git diff](#git-diff)
+    - [diff file](#diff-file)
+    - [diff compare files](#diff-hash)
+  - [git rm](#git-rm)
+    - [rm](#-r)
+    - [--cached](#--cached)
+    - [-rf](#-rf)
+  - [git log](#git-log)
+    - [--oneline](#--oneline)
+    - [--stat](#--stat)
+    - [--patch](#--patch)
+    - [--graph](#--graph)
+    - [Practice joins](#joins-log)
+  - [git brach](#git-branch)
+    - [View local branches](#view-local-branches)
+    - [View all branches](#view-all-branches)
+    - [-v](#-v)
+  - [Create new branch](#new-branch)
+    - [checkout](#checkout)
+    - [Rename branches](#rename-branches)
+    - [Delete branches](#delete-branches)
+  - [git stash](#git-stash)
+    - [List items in the stash](#items-stash)
+    - [Get elements from stash](#get-elements-stash)
+    - [Create new branch with stash](#stash-with-branch)
+    - [Removing element from the stash](#remove-elements-stash)
+  - [git clean](#git-clean)
+    - [Simulate a file deletion](#simulate-file-deletion)
+    - [Delete the files listed as not to be tracked](#delete-files-tracked)
+    - [Delete the folders listed as not to be tracked](#delete-folder-no-tracked)
+  - [git reflog](#git-reflog)
+  - [git reset](#git-reset)
+
+## Setting up your git bash
+
+The first steps is to find the _git bash_ application that you installed previously
+
+After running git bash you will have to configure it with your GitHub __user name__ and __email address__ like this.
+```bash
+git config --global user.name "your username"
+```
+```bash
+git config --global user.email "your email"
+```
+
+To confirm that your data was successfully saved you can execute one of the following commands.
+
+__NOTE:__ some give more information than others.
+```bash
+git config --global --list
+```
+```bash
+git config --list
+```
+
+## Initialize a repository locally
 ```bash
   git init
 ```
@@ -33,22 +101,22 @@ Now we will have to create a git repository to be able to add our project
 
 1.  Click on the "new repository" option
 
-![add 1](https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-1.png)
+![add-1](./img/init/add-1.PNG)
 
 2.  A name is required for the repository, so we insert one, GitHub is responsible for seeing if that name we have already used before, if not if it validates the repository name field
 
 __NOTE:__ The repository view option must be public, otherwise no one will be able to see our project
 
-![add 2](https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-2.png)
+![add 2](./img/init/add-2.png)
 
 
 3.   Click create repository
 
-![add 3](https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-3.jpg)
- 
+![add 3](./img/init/add-3.jpg)
+
 A space like this will appear:
 
-<img src="https://github.com/Noriega402/Learning-Git/blob/main/img/init/add-1.png" alt="agregar 1">
+![code init](./img/remote/1.jpg)
 
 - The first box is to connect by https or SSH to our repository, for the moment it will only be by https.
 - The second table gives us some of the commands already mentioned above and some new ones that we will mention later.
@@ -77,7 +145,74 @@ Finally we make all changes or new files are uploaded to our repository on GitHu
 Once these steps have been done we can go to our repository on GitHub and refresh the page.
 
 <h3 id="otrosComandos">Other commands</h3>
-<h4 id="gitDiff">git diff</h4>
+<h4 id="git-push">git push</h4>
+<h5 id="push-standard">standard</h5>
+
+The most commonly used to upload the first commit
+```bash
+git push -u origin <branch-name>
+```
+
+<h5 id="push-force">--force</h5>
+To forcibly upload changes
+```bash
+git push -f
+```
+
+__NOTE:__ Do not use the -f flag unless you are absolutely sure of what you are doing. It can cause a lot of problems.
+
+<h5 id="push-all">--all</h5>
+
+To upload all the changes you made in all the branches.
+
+```bash
+git push --all
+```
+
+<h5 id="push-tags">--tags</h5>
+
+To upload all the tags you have created.
+
+```bash
+git push --tags
+```
+
+<h4 id="git-commit">git commit</h4>
+
+<h5 id="commit-m">-m</h5>
+To be able to create a commit message without using a code editor
+
+```bash
+git commit -m "Your message commit"
+```
+
+<h5 id="commit-am">-am</h5>
+In addition to including the commit message, this option allows you to skip the staging phase. The addition of -a will automatically stage any files that are already being tracked by Git (changes to files that you've committed before).
+
+```bash
+git commit -am "Your message commit"
+```
+
+<h5 id="commit-amend">--amend</h5>
+
+Most of the time it happens to us for the commit message we write it wrong, then this command helps us to correct the commit again.
+
+```bash
+  git commit --amend -m "Fixed commit message"
+```
+
+<h5 id="commit-no-edit">--no-edit</h5>
+
+In case we forget to add a file or folder to a commit, we can also add it this way with a new option and there is no need to edit the commit message or add a new one:
+
+```bash
+  git add name-file
+```
+```bash
+  git commit --amend --no-edit
+```
+
+<h4 id="git-diff">git diff</h4>
 <h5 id="diff">diff</h5>
 
 It is used to be able to see in console the changes made, either we delete or add new lines of code
@@ -85,21 +220,21 @@ It is used to be able to see in console the changes made, either we delete or ad
   git diff
 ```
 
-<h5 id="diffArchivo">diff <route/file> </h5>
+<h5 id="diff-file">diff "file" </h5>
 
 We can use it to see the changes made in a single file
 ```bash
-  git diff name-file
+  git diff <name-file>
 ```
 
-<h5 id="diffCompareFiles">diff hash-old hash-new</h5>
+<h5 id="diff-hash">diff hash-old hash-new</h5>
 
 We can use it to see the changes made between one commit and another
 ```bash
-  git diff hash-commit-old hash-commit-new
+  git diff <hash-commit-old> <hash-commit-new>
 ```
 
-<h4 id="gitRm">git rm</h4>
+<h4 id="git-rm">git rm</h4>
 
 You have several options which are as follows:
 
@@ -124,8 +259,7 @@ You have several options which are as follows:
   git rm -rf name-folder
 ```
 
-<h4 id="gitLog">-r</h4>
-<h5 id="--log">--log</h5>
+<h4 id="git-log">git --log</h4>
 
 We have many changes or commit in our repository, as the project gets bigger, my project will have more commits, the good thing about this is that each commit has a message to know what changes were made, but how to see the name of those messages and see the hash of each one, we have several ways:
 - To view changes in an extended way. By default it displays the following fields
@@ -179,7 +313,7 @@ We have many changes or commit in our repository, as the project gets bigger, my
   git log --graph
 ```
 
-<h4 id="joinsLog">joins log</h4>
+<h4 id="joins-log">joins log</h4>
 
 - Most of these commands can be merged into a single line, I invite you to practice them or discover them for yourself.
 ```bash
@@ -198,13 +332,16 @@ We have many changes or commit in our repository, as the project gets bigger, my
   git log --oneline -p
 ```
 
-<h4 id="gitBranch">git branch</h4>
+<h4 id="git-branch">git branch</h4>
 <h5 id="branch">branch</h5>
 
+#### View local branches
 - You can see all branches in your repository.
 ```bash
   git branch
 ```
+
+#### View all branches
 - To view your repository branches
 ```bash
   git branch -a
@@ -217,15 +354,8 @@ We have many changes or commit in our repository, as the project gets bigger, my
   git branch -v
 ```
 
-<h5 id="-a">-a</h5>
-
-- View all local/remote branches.
-```bash
-  git branch -a
-```
-
-<h4 id="newBranch">New branch</h4>
-<h5 id="newNameBranch">new name branch</h5>
+<h4 id="new-branch">New branch</h4>
+<h5 id="new-name-branch">New name branch</h5>
 
 - To create a new branch in the repository
 ```bash
@@ -243,7 +373,7 @@ There is a shortcut to create and move branches in the repository.
   git checkout -b new-name-branch
 ```
 
-<h4 id="renameBranches">Rename branches</h4>
+<h4 id="rename-branches">Rename branches</h4>
 <h5 id="-r">--move</h5>
 
 Form One
@@ -255,7 +385,7 @@ Form Two
   git branch -m old-name-branch  new-name-branch
 ```
 
-<h4 id="deleteBranch">Deleting branches</h4>
+<h4 id="delete-branches">Deleting branches</h4>
 <h5 id="-d">-d</h5>
 
 ```bash
@@ -264,24 +394,7 @@ Form Two
   git branch
 ```
 
-<h4 id="--amend">--amend</h4>
-
-Most of the time it happens to us for the commit message we write it wrong, then this command helps us to correct the commit again
-```hash
-  git commit --amend -m "Fixed commit message"
-```
-
-<h4 id="--no-edit">--no-edit</h4>
-
-In case we forget to add a file or folder to a commit, we can also add it this way with a new option and there is no need to edit the commit message or add a new one:
-```bash
-  git add name-file
-```
-```bash
-  git commit --amend --no-edit
-```
-
-<h4 id="gitStash">git stash</h4>
+<h4 id="git-stash">git stash</h4>
 
 Saves the current Staging job in a list designed to be temporary called Stash, so that it can be retrieved in the future. To add the changes to the stash, use the command:
 ```bash
@@ -300,7 +413,7 @@ To see the list of changes saved in Stash and thus be able to retrieve them or d
   git stash list
 ```
 
-<h4 id="getElementsStash">Get elements from the _stash_</h4>
+<h4 id="get-elements-stash">Get elements from the stash</h4>
 
 The stashed behaves like a data Stack behaving in a LIFO (Last In, First Out) way, so we can access the pop method.
 
@@ -319,7 +432,7 @@ The pop method will retrieve the last stashed state from the list and insert it 
   git stash apply stash@{<num_stash>}
   ```
  __NOTE:__ the <num_stash> you get it from the git stash list
- 
+
 
 <h4 id="stash-with-branch">Creating a branch with the stash</h4>
 
