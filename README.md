@@ -13,6 +13,8 @@
     - [-am](#commit-am)
     - [--amend](#commit-amend)
     - [--no-edit](#commit-no-edit)
+  - [git clone](#git-clone)
+    - [--branch](#git-clone-branch)
   - [git diff](#git-diff)
     - [diff file](#diff-file)
     - [diff compare files](#diff-hash)
@@ -210,6 +212,25 @@ In case we forget to add a file or folder to a commit, we can also add it this w
 ```
 ```bash
   git commit --amend --no-edit
+```
+
+<h4 id="git-clone">git clone</h4>
+<h5 id="git-clone-branch">--branch</h5>
+
+Use it to be able to clone a specific branch of a repository.
+
+```bash
+git clone --branch <nameBranch> <urlResporitory>
+```
+
+Example:
+
+<pre>git clone --branch docker https://github.com/Noriega402/Node-API-REST.git</pre>
+
+or the short form:
+
+```bash
+git clon -b <nameBranch> <urlResporitory>
 ```
 
 <h4 id="git-diff">git diff</h4>
